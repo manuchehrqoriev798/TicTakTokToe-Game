@@ -1,80 +1,96 @@
-* {
-    /* reset some elements */
+*{                                                              /* reseting some elements*/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     user-select: none;
-  }
-  
-  body {
+}
+/* body{
     color: #ffd700;
     display: flex;
     font-family: sans-serif;
     justify-content: center;
     align-items: center;
-  }
-  
-  .container {
+}
+.container{
     background-color: #000;
     border-radius: 25px;
     margin: 50px;
     padding: 50px;
-    transform: scale(0.35); /* Initial scale */
-  }
-  
-  .title {
+} */
+body {
+    color: #ffd700;
+    display: flex;
+    flex-direction: column; /* Set the flex-direction to column to stack items vertically */
+    justify-content: center; /* Vertically center the container */
+    align-items: center; /* Horizontally center the container */
+    height: 100vh; /* Make the body take up the full height of the viewport */
+    margin: 0;
+}
+
+.container {
+    background-color: #000;
+    border-radius: 25px;
+    padding: 50px;
+    text-align: center; /* Center text within the container */
+}
+
+.title {
     text-align: center;
     font-size: 70px;
-  }
-  
-  .title span {
+}
+.title span{
     color: white;
-  }
-  
-  .status-reset {
+}
+
+
+
+.status-reset {
     font-size: 35px;
     margin-top: 50px;
     height: 100px;
     width: 1200px;
     padding: 0 200px;
-  }
-  
-  .status {
+}
+.status {
     border-left: 5px solid gold;
     border-radius: 5px;
     padding: 25px 20px 20px 5px;
-    float: left;
-  }
-  
-  .status span {
+    float: left;                                                 /*i used float in order to prevent moving another div after changing size fo curent div */
+}
+.status span{
     color: white;
-  }
-  
-  .reset {
-    float: right;
+}
+.reset {
+    float: right;                                               /* i used float in order to prevent moving another div after changing size fo curent div */
     cursor: pointer;
-    color: white; /* Change the color directly */
+    translate: color, 1.5s ;
     border: 1px solid white;
     box-shadow: rgba(245, 241, 241, 0.733) 0px 2px 8px, rgb(206, 204, 204) 0px 5px 6px;
     border-radius: 5px;
-    padding: 25px;
-    transition: 1s;
-  }
-  
-  .reset:hover {
+    padding: 25px;    
+}
+.reset:hover{
+    color: white;
     background-color: gold;
-  }
-  
-  .game-grid {
+    transition: 1s;
+}
+
+
+
+
+
+
+
+
+.game-grid {
     background-color: rgb(218, 209, 209);
     display: grid;
-    grid-template-columns: repeat(7, 2fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-gap: 7px;
+    grid-template-columns: repeat(7, 2fr) ;                    /* equally destrubutes space to 3 */
+    grid-template-rows: repeat(6, 1fr);                        
+    grid-gap: 7px;                                            /* distance between grid elements */
     margin-top: 50px;
-  }
-  
-  .cell {
+}
+.cell {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,78 +98,79 @@
     height: 150px;
     background-color: black;
     cursor: pointer;
-  }
-  
-  .x,
-  .o {
-    cursor: default;
-  }
-  
-  .x::after {
-    content: '×';
+}
+
+
+.x, .o {
+    cursor: default;                                          /* cursor does not react to text*/
+}
+
+
+.x::after{                     /* why just x class because in javascript we add x as third class of game-cell element*/
+    content: '×';              /* changes property of the content after some actions*/      
     color: white;
     font-size: 200px;
-  }
-  
-  .o::after {
-    content: 'O';
+}
+.o::after{
+    content: 'O';              /* changes property of the content after some actions*/         
     font-size: 130px;
-  }
-  
-  .won::after {
+}
+.won::after{
     color: red;
-  }
-  
-  @media only screen and (max-width: 1300px) and (min-width: 1200px) {
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 1025px) {
     .container {
-      transform: scale(0.55); /* Adjust the scale as needed */
+        transform: scale(0.7); 
     }
-  }
-  
-  @media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 1024px) {
     .container {
-      height: 300px;
-      width: 300px;
+        height: 300px;
+        width: 300px;
     }
-  
     .game-grid {
-      margin-top: 25px;
-      grid-gap: 10px;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
+        margin-top: 25px;
+        grid-gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
     }
-  
+
     .cell {
-      height: 180px;
-      width: 195px;
+        height: 180px;
+        width: 195px;
     }
-  
+
     .x::after {
-      font-size: 150px;
+        font-size: 150px;
     }
-  
     .o::after {
-      font-size: 90px;
+        font-size: 90px;
     }
-  }
-  
-  @media only screen and (max-width: 540px) {
+}
+
+@media only screen and (max-width: 540px) {
     .container {
-      margin: 25px;
-      padding: 25px;
+        margin: 25px;
+        padding: 25px;
     }
-  
+
     .cell {
-      height: 100px;
-      width: 100px;
+        height: 100px;
+        width: 100px;
     }
-  
+
     .x::after {
-      font-size: 100px;
+        font-size: 100px;
     }
-  
     .o::after {
-      font-size: 60px;
+        font-size: 60px;
     }
-  }
-  
+}
