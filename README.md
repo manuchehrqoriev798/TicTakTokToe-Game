@@ -1,6 +1,7 @@
 # TicTacTokToe - Connect Four in a Row
 
 TicTacTokToe is a thrilling variation of the classic Tic-Tac-Toe game. In this version, players aim to connect four symbols in a row, whether horizontally, vertically, or diagonally. This project is developed using JavaScript for game logic and HTML/CSS for design. It also includes convenient features like a reset button and player turn indicators.
+![tictaktoktoe](https://github.com/manuchehrqoriev798/TicTakTokToe-Game/assets/112572372/f423a971-7df3-4b4c-babc-9db06110cfb9)
 
 ## Table of Contents
 1. [Game Logic](#game-logic)
